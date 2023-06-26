@@ -14,11 +14,11 @@ const jourDeTravail = (jour, mois, annee) => {
     let date = new Date(annee, mois - 1, jour);
     let jourSemaine = date.getDay();
     if (jourSemaine == 0 || jourSemaine == 6) { 
-        return "Non, " + jourDeTravail + "est un week-end";
+        return "Non, c'est un week-end";
     } else if (jourFeries2020.some(jourFerie => jourFerie.getTime() === date.getTime())) {
-        return "Le " + jourDeTravail + "est un jour férié";
+        return "C'est un jour férié";
     } else {
-        return "Oui, " + jourDeTravail + "est un jour de travail";
+        return "Oui, c'est un jour de travail";
     }
 }
 
