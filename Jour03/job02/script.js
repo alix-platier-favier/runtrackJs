@@ -14,40 +14,49 @@ $(document).ready(function() {
   }
 
   function makeSlotsDroppable() {
-    $(".empty-container").droppable({
+    $(".slot").droppable({
       accept: ".container .rainbow-image",
       drop: function(_, ui) {
         var draggable = ui.draggable;
         var droppable = $(this);
-  
+
         if (!droppable.find(".rainbow-image").length) {
           draggable.appendTo(droppable);
-          draggable.position({ of: droppable, my: "center", at: "center" });
         } else {
           draggable.appendTo(".container");
         }
+
+        draggable.css({ top: 0, left: 0 });
       }
     });
   }
 
-  function checkImageOrder() {
-    var ordered = true;
-    var slots = $(".empty-container").children();
+// function checkImageOrder() {
+//   var ordered = true;
+//   var slots = $(".empty-container .slot");
+//   var expectedIndex = 0;
 
-    slots.each(function(index) {
-      var slotIndex = index + 1;
-      var expectedAlt = "arc" + slotIndex + ".png";
-      var imageAlt = $(this).find(".rainbow-image").attr("alt");
+//   slots.each(function() {
+//     var expectedAlt = "arc" + (expectedIndex + 1) + ".png";
+//     var imageAlt = $(this).find(".rainbow-image").attr("alt");
 
-      if (expectedAlt !== imageAlt) {
-        ordered = false;
-        return false;
-      }
-    });
+//     if (expectedAlt !== imageAlt) {
+//       ordered = false;
+//       return false;
+//     }
 
+//     expectedIndex++;
+//   });
+
+//   return ordered;
+// }
+
+  $(".btn").click(function() {
+    shuffleImages();
+    var isOrdered = checkImageOrder();
     var message = $(".message");
-    message.text(ordered ? "Vous avez gagné" : "Vous avez perdu").css("color", ordered ? "green" : "red");
-  }
+    message.text(isOrdered ? "Vous avez gagné" : "Vous avez perdu").css("color", isOrdered ? "green" : "red");
+  });
 
   $(".btn").click(function() {
     shuffleImages();
