@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Job03</title>
+</head>
+<body>
+    <h1>Tri ton Pokédex</h1>
+
+    <form id="filterForm">
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" />
+  
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" />
+  
+      <label for="type">Type:</label>
+      <select id="type" name="type">
+        <option value="">Tous</option>
+        <option value="type">Bug</option>
+        <option value="type">Dragon</option>
+        <option value="type">Electric</option>
+        <option value="type">Fighting</option>
+        <option value="type">Fire</option>
+        <option value="type">Ghost</option>
+        <option value="type">Grass</option>
+        <option value="type">Ground</option>
+        <option value="type">Ice</option>
+        <option value="type">Normal</option>
+        <option value="type">Poison</option>
+        <option value="type">Psychic</option>
+        <option value="type">Rock</option>
+        <option value="type">Water</option>
+      </select>
+  
+      <input type="button" value="Filtrer" onclick="filterData()" />
+    </form>
+  
+    <div id="results"></div>
+</body>
+</html>

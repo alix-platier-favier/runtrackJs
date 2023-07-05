@@ -51,12 +51,12 @@ $(document).ready(function() {
 //   return ordered;
 // }
 
-  $(".btn").click(function() {
-    shuffleImages();
-    var isOrdered = checkImageOrder();
-    var message = $(".message");
-    message.text(isOrdered ? "Vous avez gagné" : "Vous avez perdu").css("color", isOrdered ? "green" : "red");
-  });
+  // $(".btn").click(function() {
+  //   shuffleImages();
+  //   var isOrdered = checkImageOrder();
+  //   var message = $(".message");
+  //   message.text(isOrdered ? "Vous avez gagné" : "Vous avez perdu").css("color", isOrdered ? "green" : "red");
+  // });
 
   $(".btn").click(function() {
     shuffleImages();
